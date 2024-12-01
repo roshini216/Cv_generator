@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            margin-bottom: 5px;
+        }
+        .section-title {
+            font-size: 1.5em;
+            margin-top: 20px;
+            border-bottom: 1px solid rgb(0, 0, 0);
+            padding-bottom: 5px;
+        }
+        .content {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>{{ user_profile.name }}</h1>
+            <p>Email: {{ user_profile.email }} | Phone: {{ user_profile.phone }}</p>
+        </div>
+        <div class="content">
+            <div class="section-title">About Me</div>
+            <p>{{ user_profile.summary }}</p>
+        </div>
+        <div class="content">
+            <div class="section-title">Skills</div>
+            <p>{{ user_profile.skills }}</p>
+        </div>
+        <div class="content">
+            <div class="section-title">Education</div>
+            <ul>
+                <li>Schooling From: {{ user_profile.school }}</li>
+                <li>{{ user_profile.degree }} from {{ user_profile.university }}</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="section-title">Work Experience</div>
+            <p>{{ user_profile.previous_work }}</p>
+        </div>
+    </div>
+</body>
+</html>
